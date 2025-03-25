@@ -60,4 +60,28 @@ public:
             squares[i][4] = new King(kleur);
         }
     }
+
+    void PrintBoard() const
+    {
+        std::cout << "  a b c d e f g h\n";
+        for (int i = 0; i < BOARD_SIZE; i++)
+        {
+            std::cout << 8 - i << " ";
+            {
+                for (int j = 0; j < BOARD_SIZE; j++)
+                {
+                    if (squares[i][j] != nullptr)
+                    {
+                        std::cout << squares[i][j]->GetSymbol() << " ";
+                    }
+                    else
+                    {
+                        std::cout << ". ";
+                    }
+                }
+                std::cout << 8 - i << "\n";
+            }
+            std::cout << "  a b c d e f g h\n";
+        }
+    }
 };
