@@ -1,3 +1,6 @@
+#ifndef CHESSPIECES_HPP // Controleer of deze header al is geïncludeerd
+#define CHESSPIECES_HPP // Definieer de include guard
+
 #include <iostream>
 #include <vector>
 
@@ -28,13 +31,13 @@ protected:
     Piece(Color c, PieceType t) : m_kleur{c}, m_type{t} {}
 
 public:
-    virtual ~Piece() = default;
+    virtual ~Piece() {};
 
     Color GetColor() const { return m_kleur; }
     PieceType GetType() const { return m_type; }
     char GetSymbol() const { return m_symbol; }
 
-    virtual bool IsMoveValid(int x1, int y1, int x2, int y2);
+    virtual bool IsMoveValid(int x1, int y1, int x2, int y2) = 0;
 };
 
 class Pawn : public Piece
@@ -136,3 +139,5 @@ public:
         return abs(x1 - x2) <= 1 && abs(y1 - y2) <= 1;
     }
 };
+
+#endif

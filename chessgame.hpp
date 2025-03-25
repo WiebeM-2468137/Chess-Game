@@ -1,3 +1,6 @@
+#ifndef CHESSGAME_HPP // Controleer of deze header al is geïncludeerd
+#define CHESSGAME_HPP // Definieer de include guard
+
 #include "chesspieces.hpp"
 #define BOARD_SIZE 8
 
@@ -38,7 +41,7 @@ public:
         for (int j = 0; j < BOARD_SIZE; j++)
         {
             squares[1][j] = new Pawn(Color::ZWART);
-            squares[7][j] = new Pawn(Color::WIT);
+            squares[6][j] = new Pawn(Color::WIT);
         }
 
         // Overige stukken toekennen
@@ -81,7 +84,9 @@ public:
                 }
                 std::cout << 8 - i << "\n";
             }
-            std::cout << "  a b c d e f g h\n";
         }
+        std::cout << "  a b c d e f g h\n";
     }
 };
+
+#endif
