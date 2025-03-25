@@ -1,3 +1,2 @@
 # CHESS GAME
-Chess Game made for OGP course @ UHasselt
-\nNot yet finished
+Chess Game made for OGP course @ UHasselt (not yet finished)
